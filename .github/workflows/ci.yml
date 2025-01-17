@@ -68,6 +68,9 @@ jobs:
 
       - run: npx cypress install
 
+      - name: 'Print env'
+        run: env
+
       - name: Start Nx Agent ${{ matrix.agent }}
         run: npx nx-cloud start-agent
         env:
