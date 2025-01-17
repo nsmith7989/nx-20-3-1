@@ -8,11 +8,12 @@
   "// targets": "to see all targets run: nx show project nextjsapp-e2e --web",
   "targets": {
     "e2e": {
+      "dependsOn": ["nextjsapp:build:production"],
       "executor": "@nx/cypress:cypress",
       "options": {
         "cypressConfig": "apps/nextjs-app-e2e/cypress.config.ts",
         "baseUrl": "http://localhost:3010",
-        "devServerTarget": "nextjsapp:serve",
+        "devServerTarget": "nextjsapp:serve:production",
         "testingType": "e2e",
         "browser": "chrome"
       }

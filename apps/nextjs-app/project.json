@@ -10,7 +10,8 @@
       "executor": "@nx/next:build",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/nextjsapp"
+        "outputPath": "dist/apps/nextjsapp",
+        "generateLockfile": true
       }
     },
     "serve": {
@@ -25,6 +26,10 @@
         "development": {
           "buildTarget": "nextjsapp:build:development",
           "dev": true
+        },
+        "production": {
+          "buildTarget": "nextjsapp:build:production",
+          "dev": false
         }
       }
     }
