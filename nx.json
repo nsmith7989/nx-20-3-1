@@ -37,6 +37,9 @@
         "spa": false
       }
     },
+    "build": {
+      "cache": true
+    },
     "e2e": {
       "cache": true,
       "inputs": ["default", "^default", { "externalDependencies": ["cypress"] }]
