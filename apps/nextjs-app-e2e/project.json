@@ -13,7 +13,8 @@
         "cypressConfig": "apps/nextjs-app-e2e/cypress.config.ts",
         "baseUrl": "http://localhost:3010",
         "devServerTarget": "nextjsapp:serve",
-        "testingType": "e2e"
+        "testingType": "e2e",
+        "browser": "chrome"
       }
     }
   }
