@@ -70,5 +70,6 @@
         "linter": "eslint"
       }
     }
-  }
+  },
+  "bust": 1
 }
