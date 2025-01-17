@@ -52,6 +52,11 @@
   "targetDefaults": {
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
+    },
+    "serve-static": {
+      "options": {
+        "spa": false
+      }
     }
   },
   "generators": {
