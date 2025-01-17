@@ -1,0 +1,52 @@
+{
+  "name": "nextjsapp-custom-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nextjs-app-custom-server",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "dependsOn": ["^build", "build-custom-server"]
+    },
+    "build-custom-server": {
+      "executor": "@nx/js:swc",
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/nextjs-app-custom-server",
+        "main": "apps/nextjs-app-custom-server/server/main.ts",
+        "tsConfig": "apps/nextjs-app-custom-server/tsconfig.server.json",
+        "clean": false,
+        "assets": []
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve-custom-server": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "nextjsapp-custom-server:build-custom-server",
+        "inspect": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nextjsapp-custom-server:build-custom-server:development"
+        },
+        "production": {
+          "buildTarget": "nextjsapp-custom-server:build-custom-server:production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "nextjsapp-custom-server:build",
+        "dev": true,
+        "customServerTarget": "nextjsapp-custom-server:serve-custom-server"
+      }
+    }
+  }
+}

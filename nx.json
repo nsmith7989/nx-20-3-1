@@ -30,7 +30,7 @@
   ],
   "targetDefaults": {
     "e2e-ci--**/*": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^next:build"]
     },
     "serve-static": {
       "options": {
@@ -40,6 +40,9 @@
     "e2e": {
       "cache": true,
       "inputs": ["default", "^default", { "externalDependencies": ["cypress"] }]
+    },
+    "build-custom-server": {
+      "cache": true
     }
   },
   "generators": {
