@@ -1,4 +1,5 @@
 import { getGreeting } from '../support/app.po';
+// comment to trigger
 
 describe('nextjsapp-e2e', () => {
   beforeEach(() => cy.visit('/'));
