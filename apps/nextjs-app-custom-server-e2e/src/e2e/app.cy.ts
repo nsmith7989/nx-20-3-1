@@ -1,5 +1,5 @@
 import { getGreeting } from '../support/app.po';
-// comment
+// comment2
 
 describe('nextjsapp-custom-server-e2e', () => {
   beforeEach(() => cy.visit('/'));
