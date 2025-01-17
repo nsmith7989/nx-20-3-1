@@ -57,6 +57,9 @@
       "options": {
         "spa": false
       }
+    },
+    "e2e": {
+      "cache": true
     }
   },
   "generators": {
