@@ -13,7 +13,7 @@
       "options": {
         "cypressConfig": "apps/nextjs-app-custom-server-e2e/cypress.config.ts",
         "baseUrl": "http://localhost:4200",
-        "devServerTarget": "nextjsapp-custom-server:serve",
+        "devServerTarget": "nextjsapp-custom-server:serve:production",
         "testingType": "e2e",
         "browser": "chrome"
       }

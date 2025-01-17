@@ -6,6 +6,12 @@
   "tags": [],
   "targets": {
     "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/nextjsapp-custom-server",
+        "generateLockfile": true
+      },
       "dependsOn": ["^build", "build-custom-server"]
     },
     "build-custom-server": {
@@ -16,6 +22,7 @@
         "main": "apps/nextjs-app-custom-server/server/main.ts",
         "tsConfig": "apps/nextjs-app-custom-server/tsconfig.server.json",
         "clean": false,
+        "watch": false,
         "assets": []
       },
       "configurations": {
@@ -35,7 +42,8 @@
           "buildTarget": "nextjsapp-custom-server:build-custom-server:development"
         },
         "production": {
-          "buildTarget": "nextjsapp-custom-server:build-custom-server:production"
+          "buildTarget": "nextjsapp-custom-server:build-custom-server:production",
+          "watch": false
         }
       }
     },
@@ -46,6 +54,13 @@
         "buildTarget": "nextjsapp-custom-server:build",
         "dev": true,
         "customServerTarget": "nextjsapp-custom-server:serve-custom-server"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "nextjsapp-custom-server:build:production",
+          "dev": false,
+          "customServerTarget": "nextjsapp-custom-server:serve-custom-server:production"
+        }
       }
     }
   }
