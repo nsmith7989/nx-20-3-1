@@ -34,7 +34,7 @@
       }
     },
     {
-      "plugin": "@nx/cypress/plugin",
+      "plugin": "@nx/cypress",
       "options": {
         "targetName": "e2e",
         "openTargetName": "open-cypress",

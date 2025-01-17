@@ -6,5 +6,14 @@
   "tags": [],
   "implicitDependencies": ["foo-app"],
   "// targets": "to see all targets run: nx show project foo-app-e2e --web",
-  "targets": {}
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/foo-app-e2e/cypress.config.ts",
+        "devServerTarget": "foo-app:serve-static",
+        "testingType": "e2e"
+      }
+    }
+  }
 }
