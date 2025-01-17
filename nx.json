@@ -26,27 +26,6 @@
         "serveTargetName": "serve",
         "previewTargetName": "preview"
       }
-    },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/cypress",
-      "options": {
-        "targetName": "e2e",
-        "openTargetName": "open-cypress",
-        "componentTestingTargetName": "component-test",
-        "ciTargetName": "e2e-ci"
-      }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
     }
   ],
   "targetDefaults": {
@@ -76,6 +55,12 @@
       "library": {
         "style": "css",
         "linter": "eslint"
+      }
+    },
+    "@nx/next": {
+      "application": {
+        "style": "none",
+        "linter": "none"
       }
     }
   },
