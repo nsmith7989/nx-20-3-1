@@ -14,6 +14,7 @@ permissions:
 jobs:
   main:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,5 +28,8 @@ jobs:
 
       - run: npm ci --legacy-peer-deps
       - uses: nrwl/nx-set-shas@v4
+
+      - name: Print env
+        run: env
 
       - run: npx nx e2e nextjsapp-custom-server-e2e
